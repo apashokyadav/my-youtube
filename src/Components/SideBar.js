@@ -10,25 +10,25 @@ import { Link } from "react-router-dom";
 
 const SideBar=()=>{
     return(
-        <div className="flex-col w-48 ml-2 " >
+        <div className="flex-col  ml-1" >
             <div className="border-b-2 border-slate-500 my-2 ">
                     <Link to="/">
-                        <li className="flex rounded-xl hover:bg-zinc-700 py-2 transition-colors duration-300 ease-in-out" >
-                                <div className="text-2xl mx-2" > < IoMdHome /> </div> 
-                                <h1 className="text-lg ml-4 " >Home </h1> 
-                        </li>
+                        <div className="sm:flex  rounded-xl hover:bg-zinc-700 py-2 transition-colors duration-300 ease-in-out" >
+                                <div className="flex justify-center text-2xl sm:mx-2" > < IoMdHome /> </div> 
+                                <h1 className="flex justify-center text-lg sm:ml-4" >Home </h1> 
+                        </div>
                     </Link>
                     
-                    <li className="flex rounded-xl hover:bg-zinc-700 py-2 transition-colors duration-300 ease-in-out" >
-                            <div className="text-2xl mx-2" > <SiYoutubeshorts /> </div> 
-                            <h1 className="text-lg ml-4" >Shorts </h1> 
-                    </li>
-                    <li className="flex rounded-xl hover:bg-zinc-700 py-2 transition-colors duration-300 ease-in-out" >
-                            <div className="text-2xl mx-2" > <MdSubscriptions /> </div> 
-                            <h1 className="text-lg ml-4" >Subscriptions</h1> 
-                    </li>
+                    <div className="sm:flex  rounded-xl hover:bg-zinc-700 py-2 transition-colors duration-300 ease-in-out" >
+                            <div className="flex justify-center text-2xl sm:mx-2" > <SiYoutubeshorts /> </div> 
+                            <h1 className="flex justify-center text-lg sm:ml-4" >Shorts </h1> 
+                    </div>
+                    < div className="sm:flex  rounded-xl hover:bg-zinc-700 py-2 transition-colors duration-300 ease-in-out" >
+                            <div className="flex justify-center text-2xl sm:mx-2" > <MdSubscriptions /> </div> 
+                            <h1 className="flex justify-center text-sm  sm:text-lg sm:ml-4" >Subscriptions</h1> 
+                    </div>
             </div>
-            <div className="my-2" >
+            <div className="my-2 hidden sm:block" >
                 <ul>
                     <li className="flex rounded-xl hover:bg-zinc-700 py-2" >
                             <div className="text-2xl mx-2" >You {" >"}</div> 
@@ -51,14 +51,6 @@ const SideBar=()=>{
                     </li>
                 </ul>
             </div>
-            <div>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-            
         </div>
 
     )

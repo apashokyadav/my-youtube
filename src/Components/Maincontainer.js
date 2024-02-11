@@ -3,11 +3,11 @@ import VideosContainer from "./VideosContainer";
 
 const Maincontainer=()=>{
     return(
-        <div>
+        <div className="flex-col justify-center mx-4">
             <div>
                 <Filters/>
             </div>
-        <div className="flex justify-center mx-4 mg:mx-8">
+        <div className="">
             <VideosContainer/>
         </div>
         </div>

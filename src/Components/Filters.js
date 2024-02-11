@@ -8,8 +8,8 @@ export const Filtercard=({name})=>{
 const Filters=()=>{
     const arr=["All","React.js","Vishnu Jangid","News","Music","Live","Website","Cricket",]
     return(
-        <div className="overflow-x-auto">     
-        <div className="mx-4 flex space-x-4 " id="scroll-container"> 
+        <div className="">     
+        <div className="mx-auto flex space-x-4 flex-wrap" id="scroll-container"> 
             {arr.map((item)=>
                 <Filtercard key={item} name={item} />
             )}

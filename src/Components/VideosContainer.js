@@ -14,7 +14,7 @@ const VideosContainer=()=>{
         fetchData();
     },[])
     return videoList.length===0?<Simmer/> : (
-       <div className="flex justify-center flex-wrap">
+       <div className="w-full flex justify-center flex-wrap">
         { videoList.map((item)=>(
             <Link key={item.id} to={"/watch?v="+item.id} >
               <Videocard  info={item}/>

@@ -26,12 +26,12 @@ const WatchPage=()=>{
         handletoggelmenu();    
     },[]);
     return (
-        <div className="flex w-full h-full">
-            <div className="flex-col w-full h-screen  p-3 px-6 lg:w-3/4">
+        <div className="lg:flex w-full h-full">
+            <div className="flex-col w-full h-full  p-3 px-6 lg:w-3/4">
                 <div className="h-1/2 md:h-3/4" ><WatchVideoCard id={videoid} /> </div>
                 <div className="">{Videoinfo===0?"simmer": <WatchDiscription info={Videoinfo.items[0]}/>}</div>
             </div>
-            <div className="w-1/4 h-full p-2 px-4 hidden lg:block">
+            <div className="w-full lg:w-1/4 h-full p-2 px-4 ">
                 <WatchVideolist/>
             </div>
             

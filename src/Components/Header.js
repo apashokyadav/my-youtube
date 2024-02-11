@@ -8,10 +8,10 @@ import Search from "./Search";
 const Header = () => {
   const dispatch = useDispatch();
   return (
-    <div className="flex justify-between mx-2 ">
-      <div className="flex mx-2 items-center ">
+    <div className="flex justify-between sm:mx-2 ">
+      <div className="flex sm:mx-2 items-center ">
             <button
-            className="text-4xl  "
+            className="text-4xl"
             onClick={() => dispatch(toggleMenu())}
             >
             <IoReorderThreeOutline />

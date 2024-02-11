@@ -9,10 +9,10 @@ const Video = ({ info }) => {
     const timeDifference=getTimeDifference(publishedAt);
     const formattedViews = convertViews(viewCount);
   return (
-    <div className="m-2 p-1 w-auto sm:w-80 shadow-lg">
+    <div className="max-w-screen-lg  m-auto p-2  w-full h-full sm:w-80 shadow-lg duration-500 hover:scale-110 ">
         <div className="relative">
                 <img
-                className=" w-full rounded-xl"
+                className=" w-full  rounded-xl"
                 src={"https://i.ytimg.com/vi/" + id + "/mqdefault.jpg"}
                 />
                 <div className=" absolute bottom-0 right-0 bg-black bg-opacity-50 text-white px-2 py-1 text-xs rounded-md">{videoduration}</div>
@@ -24,7 +24,7 @@ const Video = ({ info }) => {
             </div>
 
             <div>
-                <h1 className=" text-lg">{title}</h1>
+                <h1 className=" max-w-xs text-lg">{title}</h1>
                 <h1 className=" text-sm text-gray-600">{channelTitle}</h1>
                 <div className="flex  text-sm text-gray-500">
                     <h1>{formattedViews + " views "}</h1>
