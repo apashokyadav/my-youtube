@@ -5,6 +5,7 @@ import { IoMdShareAlt } from "react-icons/io";
 import { IoIosMore } from "react-icons/io";
 import { getTimeDifference,convertViews } from "./functions";
 import { useState } from "react";
+import CommentContainer from "./CommentConatainer";
 const WatchDiscription=({info})=>{
     const [showmore,setShowmore]=useState(false);
     const {snippet, statistics}=info;
@@ -12,7 +13,6 @@ const WatchDiscription=({info})=>{
     const {viewCount,likeCount}=statistics;
     const timeDifference=getTimeDifference(publishedAt);
     const formattedLikes = convertViews(likeCount);   
-    console.log(info);
     return(
     <div className="m-2 p-1 w-full h-full">
         <h1 className="text-2xl font-bold">{title}</h1>
@@ -21,7 +21,7 @@ const WatchDiscription=({info})=>{
                         <div className="flex justify-center items-center text-4xl">
                         <IoPersonCircle />
                         </div>
-                        <div className="md:w-28 mx-2">
+                        <div className="md:w-auto mx-2">
                                 <h1 className="text-lg"> {channelTitle}</h1>
                                 <h4 className="text-xs">...subscribers</h4>
                         </div>
@@ -60,6 +60,7 @@ const WatchDiscription=({info})=>{
                 <button className="font-bold" onClick={()=>setShowmore(!showmore)} > {showmore?"show less":"...more"}</button>
             </div>
         </div>
+        <div><CommentContainer videoid={info.id} /></div>
 
         
 

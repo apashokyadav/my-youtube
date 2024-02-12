@@ -11,7 +11,6 @@ const Search = () => {
     const cache=useSelector(store=>store.search)
     const dispatch=useDispatch();
     const getSearchsuggetion=async()=>{
-        console.log("APi call"+searchQuery) 
         const data= await fetch(YOUTUBE_SEARCH_SUGGESTION_API+searchQuery);
         const json= await data.json();
         setSearchsuggestion(json[1]);

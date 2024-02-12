@@ -14,7 +14,7 @@ const WatchPage=()=>{
     const YOUTUBE_VIDEO_API="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id="+videoid+"&key=" + GOOGLE_API_KEY;
     const dispatch=useDispatch();
     const handletoggelmenu=()=>{
-        fetchData();
+        
         dispatch(closeMenu())
     }
     const fetchData=async()=>{
@@ -23,8 +23,9 @@ const WatchPage=()=>{
         setVideoInfo(json);
     }
     useEffect(()=>{
+        fetchData();
         handletoggelmenu();    
-    },[]);
+    },[videoid]);
     return (
         <div className="lg:flex w-full h-full">
             <div className="flex-col w-full h-full  p-3 px-6 lg:w-3/4">
