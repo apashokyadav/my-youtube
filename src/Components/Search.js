@@ -59,7 +59,7 @@ const Search = () => {
                 <input
                   onChange={(e) => setSearchQuery(e.target.value)}
                   value={searchQuery}
-                  className="outline-none bg-inherit"
+                  className="outline-none bg-zinc-900 text-zinc-200 placeholder-zinc-400"
                   type="text"
                   onFocus={() => setIsshowsuggestion(true)}
                   onKeyDown={handleKeyDown}
@@ -69,7 +69,7 @@ const Search = () => {
             <div className="absolute z-10  mt-2 md:w-60 lg:w-[30rem] bg-zinc-900 rounded-lg shadow-md">
               {isShowsuggestion &&
                 Searchsuggetion.map((item) => (
-                  <button className="flex items-center w-full my-1 px-4 py-1 rounded-lg hover:bg-zinc-700 cursor-pointer">
+                  <button className="flex items-center w-full my-1 px-4 py-1 rounded-lg hover:bg-zinc-700 cursor-pointer text-zinc-300">
                     <div>
                       {" "}
                       <IoSearchOutline />{" "}
