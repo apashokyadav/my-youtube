@@ -27,6 +27,11 @@ const Search = () => {
       navigate('/search')
       
     }
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter') {
+          onsearch(searchQuery);
+      }
+     };
     useEffect(()=>{
         const timer=setTimeout(() => {
             if(cache[searchQuery]){
@@ -54,7 +59,7 @@ const Search = () => {
               className="outline-none w-28 h-full md:w-60 pl-3 bg-zinc-900 border border-slate-800 border-r-0 rounded-l-2xl focus:border-sky-900 "
               type="text"
               onFocus={()=>setIsshowsuggestion(true)}
-              
+              onKeyDown={handleKeyDown}
               placeholder="Search"
             ></input>
          <div className="absolute z-10  mt-2 bg-zinc-900 rounded-lg shadow-md">
