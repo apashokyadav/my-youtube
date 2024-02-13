@@ -5,6 +5,7 @@ import Yticon from "../icons/youtube.svg";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 const Header = () => {
   const dispatch = useDispatch();
   return (
@@ -16,13 +17,16 @@ const Header = () => {
             >
             <IoReorderThreeOutline />
             </button>
-            <div className="flex item-center ">
-            <div className="w-8 h-7 m-2 mr-0 flex items-center">
-                {" "}
-                <img src={Yticon} alt="Yticon" />{" "}
-            </div>
-            <h1 className="ml-0 m-2 text-xl font-bold">My-YouTube</h1>
-            </div>
+            <Link to="/" className="">
+                  <div className="flex item-center ">           
+                        <div className="w-8 h-7 m-2 mr-0 flex items-center">
+                            {" "}
+                            <img src={Yticon} alt="Yticon" />{" "}
+                        </div>
+                        <h1 className="ml-0 m-2 text-xl font-bold">My-YouTube</h1>   
+                  </div>
+            </Link>
+           
       </div>
 
       <div>

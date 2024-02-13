@@ -4,12 +4,12 @@ import { convertDuration,getTimeDifference,convertViews } from "./functions";
 const Video = ({ info }) => {
     const {id,snippet,statistics,contentDetails}=info;
     const {channelTitle,title,publishedAt}=snippet;
-    const {viewCount,likeCount}=statistics;
+    const {viewCount}=statistics;
     const videoduration= convertDuration(contentDetails.duration);
     const timeDifference=getTimeDifference(publishedAt);
     const formattedViews = convertViews(viewCount);
   return (
-    <div className="max-w-screen-lg  m-auto p-2  w-full h-full sm:w-80 shadow-lg duration-500 hover:scale-110 ">
+    <div className="max-w-screen-lg   m-2 p-2  w-full h-full sm:w-80 shadow-lg duration-200 hover:scale-105 ">
         <div className="relative">
                 <img
                 className=" w-full  rounded-xl"
