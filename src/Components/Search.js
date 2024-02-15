@@ -28,6 +28,7 @@ const Search = () => {
       YOUTUBE_SEARCH_API + query + "&key=" + GOOGLE_API_KEY
     );
     const json = await data.json();
+    setSearchQuery(query);
     dispatch(updatelist(json.items));
     setIsshowsuggestion(false);
     navigate("/search");

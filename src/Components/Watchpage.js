@@ -30,10 +30,10 @@ const WatchPage=()=>{
         <div className="lg:flex w-full h-full">
             <div className="flex-col w-full h-full  p-3 px-6 lg:w-3/4">
                 <div className="h-1/2 md:h-3/4" ><WatchVideoCard id={videoid} /> </div>
-                <div className="">{Videoinfo===0?"simmer": <WatchDiscription info={Videoinfo.items[0]}/>}</div>
+                <div className="">{Videoinfo===0?"": <WatchDiscription info={Videoinfo.items[0]}/>}</div>
             </div>
             <div className="w-full lg:w-1/4 h-full p-2 px-4 ">
-                <WatchVideolist/>
+            {Videoinfo===0?"": <WatchVideolist item={Videoinfo?.items[0]} />}
             </div>
             
         </div>

@@ -19,7 +19,6 @@ const SimmerWatchlist=()=>{
         const components = [];
         const renderComponents = () => {
             for (let i = 0; i < 10; i++) {
-              // Push the component JSX into the components array
               components.push(<SimmerVideo key={i} />);
             }
             return components;

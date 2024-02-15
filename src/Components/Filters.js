@@ -22,7 +22,7 @@ export const Filtercard=({name})=>{
 }
 const Filters=()=>{
     
-    const arr=["All","React.js","Vishnu Jangid","News","Music","Live","Website","Cricket",]
+    const arr=["React.js","News","Music","Live","Website","Cricket",]
     return(
         <div className="">     
         <div className="mx-auto flex space-x-4 flex-wrap" id="scroll-container"> 
