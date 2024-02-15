@@ -1,6 +1,6 @@
 import "./App.css";
 import Body from "./Components/Body";
-import Header from "./Components/Header";
+import Error from "./Components/Error";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import {RouterProvider, createBrowserRouter} from "react-router-dom";
@@ -25,7 +25,8 @@ const approuter=createBrowserRouter([
         path:"search",
         element:<SearchResult/>
       }
-    ]
+    ],
+    errorElement:<Error/>
   }
 
 ])

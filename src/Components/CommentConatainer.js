@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { GOOGLE_API_KEY } from "../utils/constant";
 import Comment from "./Comment";
 
 const CommentContainer=({videoid})=>{
+    const GOOGLE_API_KEY=process.env.REACT_APP_GOOGLE_API_KEY
     const[commentinfo,setCommentInfo]=useState([]);
     const fetchdata=async()=>{
         const data=await fetch("https://www.googleapis.com/youtube/v3/commentThreads?key="+GOOGLE_API_KEY+"&textFormat=plainText&part=snippet&videoId="+videoid+"&maxResults=50");
@@ -25,7 +25,7 @@ const CommentContainer=({videoid})=>{
                 </div>
             </div>
             <div>
-            {commentinfo?.length===0? "Comment" :commentinfo.map((item)=>(
+            {commentinfo?.length===0? "Comment" :commentinfo?.map((item)=>(
               <Comment  key={item.id} info={item}/>
             ))}
             </div>

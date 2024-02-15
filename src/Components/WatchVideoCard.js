@@ -7,6 +7,7 @@ const WatchVideoCard = ({id}) => {
         src={"https://www.youtube.com/embed/"+id+"?si"}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
       ></iframe>
       
     </div>
