@@ -6,10 +6,12 @@ import { GOOGLE_API_KEY } from "../utils/constant";
 import WatchVideoCard from "./WatchVideoCard";
 import WatchVideolist from "./WatchVideolist";
 import WatchDiscription from "./WatchDiscription";
+import LiveChat from "./LiveChat";
 
 const WatchPage=()=>{
     const [searchParams]=useSearchParams();
     const[Videoinfo,setVideoInfo]=useState(0);
+    const[LiveStatus,setLiveStatus]=useState(false);
     const videoid=searchParams.get("v");
     const YOUTUBE_VIDEO_API="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id="+videoid+"&key=" + GOOGLE_API_KEY;
     const dispatch=useDispatch();
@@ -26,6 +28,13 @@ const WatchPage=()=>{
         fetchData();
         handletoggelmenu();    
     },[videoid]);
+    useEffect(()=>{
+        if(Videoinfo!==0){
+            if(Videoinfo?.items[0]?.snippet?.liveBroadcastContent==="live"){
+                setLiveStatus(true);
+            }
+        }
+    },[Videoinfo])
     return (
         <div className="lg:flex w-full h-full">
             <div className="flex-col w-full h-full  p-3 px-6 lg:w-3/4">
@@ -33,6 +42,7 @@ const WatchPage=()=>{
                 <div className="">{Videoinfo===0?"": <WatchDiscription info={Videoinfo.items[0]}/>}</div>
             </div>
             <div className="w-full lg:w-1/4 h-full p-2 px-4 ">
+            <div>{LiveStatus?<LiveChat id={videoid} />:"" } </div>
             {Videoinfo===0?"": <WatchVideolist item={Videoinfo?.items[0]} />}
             </div>
             

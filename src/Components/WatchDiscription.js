@@ -9,7 +9,7 @@ import CommentContainer from "./CommentConatainer";
 const WatchDiscription=({info})=>{
     const [showmore,setShowmore]=useState(false);
     const {snippet, statistics}=info;
-    const {channelTitle,title,publishedAt,description}=snippet;
+    const {channelTitle,title,publishedAt,description,liveBroadcastContent}=snippet;
     const {viewCount,likeCount}=statistics;
     const timeDifference=getTimeDifference(publishedAt);
     const formattedLikes = convertViews(likeCount);   
@@ -60,10 +60,7 @@ const WatchDiscription=({info})=>{
                 <button className="font-bold" onClick={()=>setShowmore(!showmore)} > {showmore?"show less":"...more"}</button>
             </div>
         </div>
-        <div><CommentContainer videoid={info.id} /></div>
-
-        
-
+        {liveBroadcastContent==="live"?"":<div><CommentContainer videoid={info.id} /></div>}
     </div>
     )   
 }

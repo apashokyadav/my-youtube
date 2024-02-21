@@ -60,7 +60,7 @@ const Search = () => {
                 <input
                   onChange={(e) => setSearchQuery(e.target.value)}
                   value={searchQuery}
-                  className="outline-none bg-zinc-900 text-zinc-200 placeholder-zinc-400"
+                  className="w-full outline-none bg-zinc-900 text-zinc-200 placeholder-zinc-400"
                   type="text"
                   onFocus={() => setIsshowsuggestion(true)}
                   onKeyDown={handleKeyDown}
